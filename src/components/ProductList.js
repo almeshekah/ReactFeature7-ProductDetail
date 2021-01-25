@@ -12,12 +12,24 @@ const ProductList = () => {
 
   const productList = products
     .filter((product) => product.name.includes(query))
-    .map((product) => <ProductItem product={product} key={product.id} />);
+    .map((product) => {
+      return (
+        <button onClick = "pn3on" className = " " >  
+          <ProductItem product={product} key={product.id} />
+   
+         </button>
+      );
+  });
 
   return (
     <>
       <SearchBar setQuery={setQuery} />
+      
+
       <ListWrapper>{productList}</ListWrapper>
+  
+     
+      
     </>
   );
 };
